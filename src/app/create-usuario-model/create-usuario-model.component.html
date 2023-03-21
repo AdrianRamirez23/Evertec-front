@@ -1,0 +1,52 @@
+<mat-dialog-content>
+    <div class="modal-content">
+        <form>
+            <div class="modal-header">
+                <h4 class="modal-title">Crear Usuario</h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" name="Nombre" required [(ngModel)]="Nombre">
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" class="form-control" name="Apellido" required [(ngModel)]="Apellido">
+                </div>
+                <div class="form-group">
+                    <label>Fecha Nacimiento</label>
+                    <input class="form-control" type="date" required name="FechaNacimiento" [(ngModel)]="FechaNacimiento">
+                </div>
+                <div class="form-group">
+                    <label>Foto </label>
+                    <input type="file" class="form-control" required id="FotoUsuario" (change)="capturarArchivo($event)">
+                </div>
+                <div class="form-group">
+                    <label>Estado Civil </label>
+                    <select class="form-control" FotoUsuario [(ngModel)]="EstadoCivil" name="EstadoCivil">
+                        <option value="-1">Seleccionar Estado Civil</option>
+                        <option value="1">Soltero</option>
+                        <option value="2">Casado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tiene Hermanos </label>
+                    <select class="form-control" [(ngModel)]="TieneHermanos" name="TieneHermanos">
+                        <option value="-1">Tienes Hermanos?</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onNoClick()">Cerrar</button>
+                <button type="submit" class="btn btn-success" (click)="crearUsuario()" >Crear Usuario</button>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Volver</button>
+</mat-dialog-actions>
+

@@ -1,0 +1,22 @@
+<mat-dialog-content>
+    <div class="modal-content">
+        <form>
+            <div class="modal-header">						
+                <h4 class="modal-title">Eliminar Usuario</h4>
+               
+            </div>
+            <div class="modal-body">					
+                <p>Estas seguro que deseas eliminar este registro?</p>
+                <p class="text-warning"><small>Esta acción ya no podrá recuperarse.</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="onNoClick()" >Cerrar</button>
+                <button type="submit" class="btn btn-danger"  (click)="eliminarUsuario()">Eliminar</button>
+            </div>
+        </form>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Volver</button>
+  </mat-dialog-actions>
+
